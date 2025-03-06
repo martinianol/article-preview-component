@@ -14,7 +14,7 @@ body {
   background-color: #ecf2f8;
 }
 body main {
-  padding: 0px 20px;
+  padding: 0px 24px;
   flex-grow: 1;
   display: flex;
   justify-content: center;
@@ -31,13 +31,80 @@ body article {
   border-radius: 10px;
   overflow: hidden;
 }
+body article .image-container {
+  max-height: 200px;
+  overflow: hidden;
+}
+body article .image-container img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center -20px;
+}
 body .product-info {
   display: flex;
   flex-direction: column;
   padding: 32px 30px 18px;
 }
-body #user-info {
+body .product-info .product-description {
   display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+body .product-info .product-description h1 {
+  font: 700 20px/130% "Manrope", sans-serif;
+  letter-spacing: 0.25px;
+  color: #48556a;
+}
+body .product-info .product-description p {
+  font: 400 13px/140% "Manrope", sans-serif;
+  letter-spacing: 0.12px;
+  color: #6e8098;
+}
+body #user-info {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+body #user-info img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+body #user-info .user-details {
+  display: flex;
+  flex-direction: column;
+  font: 700 13px/140% "Manrope", sans-serif;
+  letter-spacing: 0.12px;
+}
+body #user-info .user-details .date {
+  color: #9daec2;
+  font-weight: 400;
+}
+body #user-info #share-btn {
+  margin-left: auto;
+  background-color: #ecf2f8;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+body #user-info #share-btn img {
+  width: 15px;
+  height: 13px;
+  filter: invert(0);
+  transition: filter 0.3s ease;
+}
+body #user-info #share-btn:hover {
+  background-color: #6e8098;
+}
+body #user-info #share-btn:hover img {
+  filter: brightness(0) invert(1);
 }
 body #share-details {
   display: none;
