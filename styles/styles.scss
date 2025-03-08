@@ -46,151 +46,199 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: $grey-200;
+}
 
-  main {
-    padding: 0px 24px;
-    flex-grow: 1;
-    display: flex; // Enables flexbox
-    justify-content: center; // Centers horizontally
-    align-items: center; // Centers vertically
+main {
+  padding: 0px 24px;
+  flex-grow: 1;
+  display: flex; // Enables flexbox
+  justify-content: center; // Centers horizontally
+  align-items: center; // Centers vertically
+}
+
+footer {
+  padding: 20px;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  background-color: $white;
+  border-radius: 10px;
+  overflow: hidden;
+
+  @media (min-width: $break-point-1) {
+    flex-direction: row;
+    max-width: 608px;
   }
 
-  footer {
-    padding: 20px;
+  @media (min-width: $break-point-2) {
+    max-width: 730px;
   }
 
-  article {
-    display: flex;
-    flex-direction: column;
-    background-color: $white;
-    border-radius: 10px;
-    overflow: hidden;
+  .image-container {
+    max-height: 200px;
+    overflow: hidden; // Ensures anything outside the container is hidden
 
-    @media(min-width: $break-point-1) {
-      flex-direction: row;
-      max-width: 608px;
-    }
-
-    @media(min-width: $break-point-2) {
-      max-width: 730px;
-    }
-    
-    .image-container {
-      max-height: 200px;
-      overflow: hidden; // Ensures anything outside the container is hidden
-      
-      @media(min-width: $break-point-1) {
-        max-height: unset;
-        flex: 0 0 39%;
-      }
-
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover; // Ensures the image fills the container without distortion
-        object-position: center -20px;
-
-        @media(min-width: $break-point-1) {
-          object-fit: unset;
-          object-position: center;
-        }
-      }
-    }
-  }
-
-  .product-info {
-    display: flex;
-    flex-direction: column;
-    padding: 32px 30px 18px;
-
-    @media(min-width: $break-point-1) {
-      padding: 41px 36px 41px 32px;
-      flex: 0 0 61%;
-    }
-
-    @media(min-width: $break-point-1) {
-      padding: 30px 40px;
-      flex: 0 0 61%;
-    }
-
-
-    .product-description {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
-
-      h1 {
-        @include text-preset-1;
-        color: $grey-900;
-      }
-
-      p {
-        @include text-preset-2-medium;
-        color: $grey-500;
-      }
-    }
-  }
-
-  #user-info {
-    margin-top: 48px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-
-    @media(min-width: $break-point-1) {
-      margin-top: 24px;
-     padding-right: 5px;
+    @media (min-width: $break-point-1) {
+      max-height: unset;
+      flex: 0 0 39%;
     }
 
     img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-    }
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // Ensures the image fills the container without distortion
+      object-position: center -20px;
 
-    .user-details {
-      display: flex;
-      flex-direction: column;
-
-      @include text-preset-2-bold;
-
-      .date {
-        color: $grey-400;
-        font-weight: 400;
-      }
-    }
-
-    #share-btn {
-      margin-left: auto;
-      background-color: $grey-200;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      transition: background 0.3s ease;
-
-      img {
-        width: 15px;
-        height: 13px;
-        filter: invert(0); // Default color (original SVG color)
-        transition: filter 0.3s ease;
-      }
-
-      &:hover {
-        background-color: $grey-500;
-
-        img {
-          filter: brightness(0) invert(1);
-        }
+      @media (min-width: $break-point-1) {
+        object-fit: unset;
+        object-position: center;
       }
     }
   }
+}
 
-  #share-details {
+.product-info {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 30px 18px;
+
+  @media (min-width: $break-point-1) {
+    padding: 41px 36px 41px 32px;
+    flex: 0 0 61%;
+  }
+
+  @media (min-width: $break-point-2) {
+    padding: 30px 40px;
+  }
+
+  .product-description {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    h1 {
+      @include text-preset-1;
+      color: $grey-900;
+    }
+
+    p {
+      @include text-preset-2-medium;
+      color: $grey-500;
+    }
+  }
+}
+
+#user-info {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  &.hidden {
     display: none;
+  }
+
+  @media (min-width: $break-point-1) {
+    margin-top: 24px;
+    padding-right: 5px;
+  }
+
+  .user-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  .user-details {
+    display: flex;
+    flex-direction: column;
+
+    @include text-preset-2-bold;
+
+    .date {
+      color: $grey-400;
+      font-weight: 400;
+    }
+  }
+}
+
+.button {
+  margin-left: auto;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+
+  img {
+    width: 15px;
+    height: 13px;
+    transition: filter 0.3s ease;
+  }
+}
+
+#share-btn {
+  background-color: $grey-200;
+  img {
+    filter: invert(0);
+  }
+
+  &:hover {
+    background-color: $grey-500;
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
+}
+
+#share-btn-2 {
+  background-color: $grey-500;
+
+  img {
+    filter: brightness(0) invert(1);
+  }
+
+  &:hover {
+    background-color: $grey-200;
+    img {
+      filter: invert(0);
+    }
+  }
+}
+
+#share-details {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background-color: $grey-900;
+  padding: 22px 30px;
+
+  &.hidden {
+    display: none;
+  }
+
+  p {
+    text-transform: uppercase;
+    @include text-preset-3;
+    letter-spacing: 3.25px;
+    color: $grey-400;
+  }
+
+  .icons-container {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    height: 20px;
+    line-height: 0;
+
+    img {
+      width: 20px;
+    }
   }
 }

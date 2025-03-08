@@ -13,17 +13,20 @@ body {
   min-height: 100vh;
   background-color: #ecf2f8;
 }
-body main {
+
+main {
   padding: 0px 24px;
   flex-grow: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-body footer {
+
+footer {
   padding: 20px;
 }
-body article {
+
+article {
   display: flex;
   flex-direction: column;
   background-color: #fff;
@@ -31,100 +34,104 @@ body article {
   overflow: hidden;
 }
 @media (min-width: 500px) {
-  body article {
+  article {
     flex-direction: row;
     max-width: 608px;
   }
 }
 @media (min-width: 800px) {
-  body article {
+  article {
     max-width: 730px;
   }
 }
-body article .image-container {
+article .image-container {
   max-height: 200px;
   overflow: hidden;
 }
 @media (min-width: 500px) {
-  body article .image-container {
+  article .image-container {
     max-height: unset;
     flex: 0 0 39%;
   }
 }
-body article .image-container img {
+article .image-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center -20px;
 }
 @media (min-width: 500px) {
-  body article .image-container img {
+  article .image-container img {
     object-fit: unset;
     object-position: center;
   }
 }
-body .product-info {
+
+.product-info {
   display: flex;
   flex-direction: column;
   padding: 32px 30px 18px;
 }
 @media (min-width: 500px) {
-  body .product-info {
+  .product-info {
     padding: 41px 36px 41px 32px;
     flex: 0 0 61%;
   }
 }
-@media (min-width: 500px) {
-  body .product-info {
+@media (min-width: 800px) {
+  .product-info {
     padding: 30px 40px;
-    flex: 0 0 61%;
   }
 }
-body .product-info .product-description {
+.product-info .product-description {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
-body .product-info .product-description h1 {
+.product-info .product-description h1 {
   font: 700 20px/130% "Manrope", sans-serif;
   letter-spacing: 0.5px;
   color: #48556a;
 }
-body .product-info .product-description p {
+.product-info .product-description p {
   font: 400 13px/140% "Manrope", sans-serif;
   letter-spacing: 0.156px;
   color: #6e8098;
 }
-body #user-info {
+
+#user-info {
   margin-top: 48px;
   display: flex;
   align-items: center;
   gap: 16px;
 }
+#user-info.hidden {
+  display: none;
+}
 @media (min-width: 500px) {
-  body #user-info {
+  #user-info {
     margin-top: 24px;
     padding-right: 5px;
   }
 }
-body #user-info img {
+#user-info .user-image {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
-body #user-info .user-details {
+#user-info .user-details {
   display: flex;
   flex-direction: column;
   font: 700 13px/140% "Manrope", sans-serif;
   letter-spacing: 0.156px;
 }
-body #user-info .user-details .date {
+#user-info .user-details .date {
   color: #9daec2;
   font-weight: 400;
 }
-body #user-info #share-btn {
+
+.button {
   margin-left: auto;
-  background-color: #ecf2f8;
   border: none;
   cursor: pointer;
   display: flex;
@@ -135,20 +142,64 @@ body #user-info #share-btn {
   border-radius: 50%;
   transition: background 0.3s ease;
 }
-body #user-info #share-btn img {
+.button img {
   width: 15px;
   height: 13px;
-  filter: invert(0);
   transition: filter 0.3s ease;
 }
-body #user-info #share-btn:hover {
+
+#share-btn {
+  background-color: #ecf2f8;
+}
+#share-btn img {
+  filter: invert(0);
+}
+#share-btn:hover {
   background-color: #6e8098;
 }
-body #user-info #share-btn:hover img {
+#share-btn:hover img {
   filter: brightness(0) invert(1);
 }
-body #share-details {
+
+#share-btn-2 {
+  background-color: #6e8098;
+}
+#share-btn-2 img {
+  filter: brightness(0) invert(1);
+}
+#share-btn-2:hover {
+  background-color: #ecf2f8;
+}
+#share-btn-2:hover img {
+  filter: invert(0);
+}
+
+#share-details {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background-color: #48556a;
+  padding: 22px 30px;
+}
+#share-details.hidden {
   display: none;
+}
+#share-details p {
+  text-transform: uppercase;
+  font: 400 13px/140% "Manrope", sans-serif;
+  letter-spacing: 0.156px;
+  letter-spacing: 3.25px;
+  color: #9daec2;
+}
+#share-details .icons-container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  height: 20px;
+  line-height: 0;
+}
+#share-details .icons-container img {
+  width: 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */
