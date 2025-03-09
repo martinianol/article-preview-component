@@ -131,10 +131,10 @@ article {
 }
 
 #user-info {
-  margin-top: 48px;
   display: flex;
   align-items: center;
   gap: 16px;
+  margin-top: 48px;
 
   &.hidden {
     display: none;
@@ -217,6 +217,7 @@ article {
   align-items: center;
   gap: 24px;
   background-color: $grey-900;
+  margin-top: 12px;
   padding: 22px 30px;
 
   &.hidden {

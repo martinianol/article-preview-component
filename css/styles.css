@@ -100,10 +100,10 @@ article .image-container img {
 }
 
 #user-info {
-  margin-top: 48px;
   display: flex;
   align-items: center;
   gap: 16px;
+  margin-top: 48px;
 }
 #user-info.hidden {
   display: none;
@@ -179,6 +179,7 @@ article .image-container img {
   align-items: center;
   gap: 24px;
   background-color: #48556a;
+  margin-top: 12px;
   padding: 22px 30px;
 }
 #share-details.hidden {
