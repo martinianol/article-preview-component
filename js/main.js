@@ -24,7 +24,7 @@ shareBtns.forEach((button) => {
           shareDetails.style.transform = "translateX(-50%)";
           const tooltipHeight = shareDetails.offsetHeight;
           // Position share-details above share-btn by 18px
-          shareDetails.style.top = `${btnRect.top - tooltipHeight - 18}px`;
+          shareDetails.style.top = `${btnRect.top - tooltipHeight - 30}px`;
         });
       } else {
         // Reset inline styles when hiding the tooltip

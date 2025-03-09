@@ -82,7 +82,7 @@ article {
 
     @media (min-width: $break-point-1) {
       max-height: unset;
-      flex: 0 0 39%;
+      flex: 0 0 37.5%;
     }
 
     img {
@@ -106,7 +106,7 @@ article {
 
   @media (min-width: $break-point-1) {
     padding: 41px 36px 41px 32px;
-    flex: 0 0 61%;
+    flex: 0 0 62.5%;
   }
 
   @media (min-width: $break-point-2) {
@@ -213,6 +213,7 @@ article {
 }
 
 #share-details {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 24px;
@@ -223,6 +224,7 @@ article {
   @media (min-width: $break-point-1) {
     border-radius: 10px;
     padding: 18px 38px;
+    margin-top: 0px;
 
     button {
       display: none;
@@ -246,10 +248,22 @@ article {
     align-items: center;
     height: 20px;
     line-height: 0;
-
+    
     img {
       width: 20px;
     }
+  }
+  
+  .arrow {
+    position: absolute;
+    bottom: -12px; // Positions the arrow 12px below share-details
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 12px solid $grey-900; // Matches the background color of share-details
   }
   
 }
