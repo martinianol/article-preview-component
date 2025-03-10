@@ -26,31 +26,20 @@ function positionTooltip() {
 
 shareBtns.forEach((button) => {
   button.addEventListener("click", (e) => {
-    if (window.innerWidth < 500) {
-      // Mobile behavior: Toggle both user-info and share-details
-      shareDetails.classList.toggle("hidden");
-      userInfo.classList.toggle("hidden");
-      arrowTooltip.classList.toggle("hidden");
-    } else {
-      // Tablet/Desktop behavior: Only toggle share-details as a tooltip
-      shareDetails.classList.toggle("hidden");
-      // Toggle the 'active' class on the button
-      shareBtn.classList.toggle(
-        "active",
-        !shareDetails.classList.contains("hidden")
-      );
-      positionTooltip();
-    }
+    shareDetails.classList.toggle("hidden");
+    userInfo.classList.toggle("hidden", window.innerWidth < 500);
+
+    button.classList.toggle(
+      "active",
+      !shareDetails.classList.contains("hidden")
+    );
+    positionTooltip();
   });
 });
 
 window.addEventListener("resize", () => {
-  if (window.innerWidth < 500) {
-    // Switch to mobile layout
-    shareDetails.classList.add("hidden");
-    userInfo.classList.remove("hidden");
-    shareBtn.classList.remove("active");
+  if (shareBtn.classList.contains("active")) {
+    userInfo.classList.toggle("hidden", window.innerWidth < 500);
   }
-  // Reposition the tooltip in desktop layout
   positionTooltip();
 });
