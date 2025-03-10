@@ -6,32 +6,31 @@ $grey-400: #9daec2;
 $grey-200: #ecf2f8;
 
 //Typography
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap");
 $font-primary: "Manrope", sans-serif;
 
 // Define text preset using a mixin
 @mixin text-preset-1 {
-  font: 700 20px / 130% $font-primary;
-  letter-spacing: 0.5px;
+  font: 700 1.25rem / 130% $font-primary;
+  letter-spacing: 0.031rem;
 }
 
 @mixin text-preset-2-bold {
-  font: 700 13px / 140% $font-primary;
-  letter-spacing: 0.156px;
+  font: 700 0.8125rem / 140% $font-primary;
+  letter-spacing: 0.00975rem;
 }
 
 @mixin text-preset-2-medium {
   font: 400 13px / 140% $font-primary;
-  letter-spacing: 0.156px;
+  letter-spacing: 0.00975rem;
 }
 
 @mixin text-preset-3 {
   font: 400 13px / 140% $font-primary;
-  letter-spacing: 0.156px;
+  letter-spacing: 0.203125rem;
 }
 
-$break-point-1: 500px;
-$break-point-2: 800px;
+$break-point-1: 31rem;
+$break-point-2: 50rem;
 
 * {
   margin: 0;
@@ -239,7 +238,6 @@ article {
   p {
     text-transform: uppercase;
     @include text-preset-3;
-    letter-spacing: 3.25px;
     color: $grey-400;
   }
 
