@@ -5,7 +5,7 @@ const shareDetails = document.getElementById("share-details");
 const userInfo = document.getElementById("user-info");
 const arrowTooltip = document.getElementsByClassName("arrow")[0];
 
-function positionTooltip() {
+const positionTooltip = () => {
   if (!shareDetails.classList.contains("hidden") && window.innerWidth >= 500) {
     requestAnimationFrame(() => {
       shareDetails.style.position = "absolute";
@@ -22,24 +22,43 @@ function positionTooltip() {
     shareDetails.style.top = "";
     shareDetails.style.transform = "";
   }
-}
+};
 
 shareBtns.forEach((button) => {
   button.addEventListener("click", (e) => {
-    shareDetails.classList.toggle("hidden");
-    userInfo.classList.toggle("hidden", window.innerWidth < 500);
+    const isHidden = shareDetails.classList.toggle("hidden");
 
-    button.classList.toggle(
-      "active",
-      !shareDetails.classList.contains("hidden")
-    );
+    // Toggle user-info visibility only in mobile view
+    if (window.innerWidth < 500) {
+      userInfo.classList.toggle("hidden", !isHidden);
+    }
+
+    button.classList.toggle("active", !isHidden);
     positionTooltip();
   });
 });
 
 window.addEventListener("resize", () => {
-  if (shareBtn.classList.contains("active")) {
-    userInfo.classList.toggle("hidden", window.innerWidth < 500);
+  const isMobileView = window.innerWidth < 500;
+  const isTooltipVisible = !shareDetails.classList.contains("hidden");
+
+  if (isTooltipVisible) {
+    userInfo.classList.toggle("hidden", isMobileView); // Ensure user-info is visible
   }
+
   positionTooltip();
+});
+
+window.addEventListener("click", (e) => {
+  // Check if the clicked element is NOT inside shareDetails or the buttons
+  if (
+    !shareDetails.contains(e.target) &&
+    !shareBtn.contains(e.target) &&
+    !shareBtn2.contains(e.target)
+  ) {
+    shareDetails.classList.add("hidden");
+    userInfo.classList.remove("hidden");
+    shareBtn.classList.remove("active");
+    shareBtn2.classList.remove("active");
+  }
 });
