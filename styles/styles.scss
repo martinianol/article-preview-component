@@ -189,7 +189,8 @@ article {
     filter: invert(0);
   }
 
-  &:hover {
+  &:hover,
+  &.active {
     background-color: $grey-500;
     img {
       filter: brightness(0) invert(1);
@@ -248,12 +249,12 @@ article {
     align-items: center;
     height: 20px;
     line-height: 0;
-    
+
     img {
       width: 20px;
     }
   }
-  
+
   .arrow {
     position: absolute;
     bottom: -12px; // Positions the arrow 12px below share-details
@@ -265,5 +266,4 @@ article {
     border-right: 12px solid transparent;
     border-top: 12px solid $grey-900; // Matches the background color of share-details
   }
-  
 }

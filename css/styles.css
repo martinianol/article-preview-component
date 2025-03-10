@@ -154,10 +154,10 @@ article .image-container img {
 #share-btn img {
   filter: invert(0);
 }
-#share-btn:hover {
+#share-btn:hover, #share-btn.active {
   background-color: #6e8098;
 }
-#share-btn:hover img {
+#share-btn:hover img, #share-btn.active img {
   filter: brightness(0) invert(1);
 }
 
