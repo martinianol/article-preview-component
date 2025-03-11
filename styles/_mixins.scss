@@ -1,0 +1,21 @@
+@use "variables" as *;
+// Define text preset using a mixin
+@mixin text-preset-1 {
+  font: 700 1.25rem / 130% $font-primary;
+  letter-spacing: 0.031rem;
+}
+
+@mixin text-preset-2-bold {
+  font: 700 0.8125rem / 140% $font-primary;
+  letter-spacing: 0.00975rem;
+}
+
+@mixin text-preset-2-medium {
+  font: 400 13px / 140% $font-primary;
+  letter-spacing: 0.00975rem;
+}
+
+@mixin text-preset-3 {
+  font: 400 13px / 140% $font-primary;
+  letter-spacing: 0.203125rem;
+}
