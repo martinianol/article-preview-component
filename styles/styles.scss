@@ -83,17 +83,17 @@ footer {
       max-height: unset;
       flex: 0 0 37.5%;
     }
+  }
 
-    &__image {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; // Ensures the image fills the container without distortion
-      object-position: center -20px;
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; // Ensures the image fills the container without distortion
+    object-position: center -20px;
 
-      @media (min-width: $break-point-1) {
-        object-fit: unset;
-        object-position: center;
-      }
+    @media (min-width: $break-point-1) {
+      object-fit: unset;
+      object-position: center;
     }
   }
 }
@@ -189,29 +189,28 @@ footer {
     &:hover,
     &.active {
       background-color: $grey-500;
-    }
-  }
 
-  &--light .button__icon {
-    &:hover,
-    &.active {
-      filter: brightness(0) invert(1);
+      .button__icon {
+        filter: brightness(0) invert(1);
+      }
     }
   }
 
   &--dark {
     background-color: $grey-500;
 
-    &:hover {
+    &:hover,
+    &:active {
       background-color: $grey-200;
+
+      .button__icon {
+        filter: invert(0);
+      }
     }
   }
 
   &--dark .button__icon {
     filter: brightness(0) invert(1);
-    &:hover {
-      filter: invert(0);
-    }
   }
 }
 
@@ -244,6 +243,18 @@ footer {
     color: $grey-400;
   }
 
+  &__icons-container {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    height: 20px;
+    line-height: 0;
+  }
+
+  &__icon {
+    width: 20px;
+  }
+
   &__arrow {
     position: absolute;
     bottom: -12px; // Positions the arrow 12px below share-details
@@ -254,19 +265,5 @@ footer {
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
     border-top: 12px solid $grey-900; // Matches the background color of share-details
-  }
-
-  &__icons-container {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    height: 20px;
-    line-height: 0;
-  }
-}
-
-.icon-container {
-  &__image {
-    width: 20px;
   }
 }

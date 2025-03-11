@@ -53,14 +53,14 @@ footer {
     flex: 0 0 37.5%;
   }
 }
-.card__image-container__image {
+.card__image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center -20px;
 }
 @media (min-width: 31rem) {
-  .card__image-container__image {
+  .card__image {
     object-fit: unset;
     object-position: center;
   }
@@ -156,20 +156,20 @@ footer {
 .button--light:hover, .button--light.active {
   background-color: #6e8098;
 }
-.button--light .button__icon:hover, .button--light .button__icon.active {
+.button--light:hover .button__icon, .button--light.active .button__icon {
   filter: brightness(0) invert(1);
 }
 .button--dark {
   background-color: #6e8098;
 }
-.button--dark:hover {
+.button--dark:hover, .button--dark:active {
   background-color: #ecf2f8;
+}
+.button--dark:hover .button__icon, .button--dark:active .button__icon {
+  filter: invert(0);
 }
 .button--dark .button__icon {
   filter: brightness(0) invert(1);
-}
-.button--dark .button__icon:hover {
-  filter: invert(0);
 }
 
 .share-details {
@@ -200,6 +200,16 @@ footer {
   letter-spacing: 0.203125rem;
   color: #9daec2;
 }
+.share-details__icons-container {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  height: 20px;
+  line-height: 0;
+}
+.share-details__icon {
+  width: 20px;
+}
 .share-details__arrow {
   position: absolute;
   bottom: -12px;
@@ -210,17 +220,6 @@ footer {
   border-left: 12px solid transparent;
   border-right: 12px solid transparent;
   border-top: 12px solid #48556a;
-}
-.share-details__icons-container {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  height: 20px;
-  line-height: 0;
-}
-
-.icon-container__image {
-  width: 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */
