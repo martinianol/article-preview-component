@@ -60,6 +60,11 @@ main {
       max-height: unset;
       flex: 0 0 37.5%;
     }
+
+    @media (min-width: $break-point-2) {
+      max-height: unset;
+      flex: 0 0 39.04%;
+    }
   }
 
   &__image {
@@ -69,8 +74,14 @@ main {
     object-position: center -20px;
 
     @media (min-width: $break-point-1) {
-      object-fit: unset;
+      object-fit: fill;
       object-position: center;
+      width: 281px
+    }
+
+    @media (min-width: $break-point-2) {
+      object-fit: cover;
+      width: 350px
     }
   }
 }
@@ -82,7 +93,6 @@ main {
 
   @media (min-width: $break-point-1) {
     padding: 41px 36px 41px 32px;
-    flex: 0 0 62.5%;
   }
 
   @media (min-width: $break-point-2) {
