@@ -6,7 +6,10 @@ const userInfo = document.querySelector(".user-info");
 const arrowTooltip = document.querySelector(".share-details__arrow");
 
 const positionTooltip = () => {
-  if (!shareDetails.classList.contains("hidden") && window.innerWidth >= 500) {
+  if (
+    !shareDetails.classList.contains("share-details--hidden") &&
+    window.innerWidth >= 500
+  ) {
     requestAnimationFrame(() => {
       shareDetails.style.position = "absolute";
       const btnRect = shareBtn.getBoundingClientRect();

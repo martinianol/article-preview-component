@@ -203,8 +203,16 @@ main {
     padding: 18px 38px;
     margin-top: 0px;
 
-    button {
+    &__button {
       display: none;
+    }
+  }
+
+  &__button {
+    @extend .button;
+
+    &--dark {
+      @extend .button-dark;
     }
   }
 
