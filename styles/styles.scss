@@ -212,7 +212,7 @@ main {
     @extend .button;
 
     &--dark {
-      @extend .button-dark;
+      @extend .button--dark;
     }
   }
 

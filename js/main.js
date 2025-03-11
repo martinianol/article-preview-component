@@ -1,6 +1,6 @@
-const shareBtns = document.querySelectorAll(".button");
-const shareBtn = shareBtns[0];
-const shareBtn2 = shareBtns[1];
+const shareBtn = document.querySelector(".button")
+const shareBtn2 = document.querySelector(".share-details__button")
+const shareBtns = [shareBtn, shareBtn2]
 const shareDetails = document.querySelector(".share-details");
 const userInfo = document.querySelector(".user-info");
 const arrowTooltip = document.querySelector(".share-details__arrow");
@@ -8,7 +8,7 @@ const arrowTooltip = document.querySelector(".share-details__arrow");
 const positionTooltip = () => {
   if (
     !shareDetails.classList.contains("share-details--hidden") &&
-    window.innerWidth >= 500
+    window.innerWidth >= 496
   ) {
     requestAnimationFrame(() => {
       shareDetails.style.position = "absolute";
@@ -32,7 +32,7 @@ shareBtns.forEach((button) => {
     const isHidden = shareDetails.classList.toggle("share-details--hidden");
 
     // Toggle user-info visibility only in mobile view
-    if (window.innerWidth < 500) {
+    if (window.innerWidth < 496) {
       userInfo.classList.toggle("user-info--hidden", !isHidden);
     }
 
@@ -42,7 +42,7 @@ shareBtns.forEach((button) => {
 });
 
 window.addEventListener("resize", () => {
-  const isMobileView = window.innerWidth < 500;
+  const isMobileView = window.innerWidth < 496;
   const isTooltipVisible = !shareDetails.classList.contains(
     "share-details--hidden"
   );
