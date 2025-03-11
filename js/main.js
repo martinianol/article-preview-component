@@ -1,9 +1,9 @@
-const shareBtns = document.querySelectorAll("button");
-const shareBtn = document.getElementById("share-btn");
-const shareBtn2 = document.getElementById("share-btn-2");
-const shareDetails = document.getElementById("share-details");
-const userInfo = document.getElementById("user-info");
-const arrowTooltip = document.getElementsByClassName("arrow")[0];
+const shareBtns = document.querySelectorAll(".button");
+const shareBtn = shareBtns[0];
+const shareBtn2 = shareBtns[1];
+const shareDetails = document.querySelector(".share-details");
+const userInfo = document.querySelector(".user-info");
+const arrowTooltip = document.querySelector(".share-details__arrow");
 
 const positionTooltip = () => {
   if (!shareDetails.classList.contains("hidden") && window.innerWidth >= 500) {
@@ -26,11 +26,11 @@ const positionTooltip = () => {
 
 shareBtns.forEach((button) => {
   button.addEventListener("click", (e) => {
-    const isHidden = shareDetails.classList.toggle("hidden");
+    const isHidden = shareDetails.classList.toggle("share-details--hidden");
 
     // Toggle user-info visibility only in mobile view
     if (window.innerWidth < 500) {
-      userInfo.classList.toggle("hidden", !isHidden);
+      userInfo.classList.toggle("user-info--hidden", !isHidden);
     }
 
     button.classList.toggle("active", !isHidden);
@@ -40,10 +40,12 @@ shareBtns.forEach((button) => {
 
 window.addEventListener("resize", () => {
   const isMobileView = window.innerWidth < 500;
-  const isTooltipVisible = !shareDetails.classList.contains("hidden");
+  const isTooltipVisible = !shareDetails.classList.contains(
+    "share-details--hidden"
+  );
 
   if (isTooltipVisible) {
-    userInfo.classList.toggle("hidden", isMobileView); // Ensure user-info is visible
+    userInfo.classList.toggle("user-info--hidden", isMobileView); // Ensure user-info is visible
   }
 
   positionTooltip();
@@ -56,8 +58,8 @@ window.addEventListener("click", (e) => {
     !shareBtn.contains(e.target) &&
     !shareBtn2.contains(e.target)
   ) {
-    shareDetails.classList.add("hidden");
-    userInfo.classList.remove("hidden");
+    shareDetails.classList.add("share-details--hidden");
+    userInfo.classList.remove("user-info--hidden");
     shareBtn.classList.remove("active");
     shareBtn2.classList.remove("active");
   }

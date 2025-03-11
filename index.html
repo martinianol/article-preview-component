@@ -23,79 +23,94 @@
 
     <title>Frontend Mentor | Article preview component</title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        font-size: 11px;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
-      }
-    </style>
-
     <script src="js/main.js" defer></script>
   </head>
   <body>
     <main>
-      <article id="card">
-        <div class="image-container">
-          <img src="./images/drawers.jpg" alt="furniture" />
+      <article class="card">
+        <div class="card__image-container">
+          <img class="card__image" src="./images/drawers.jpg" alt="furniture" />
         </div>
         <div class="product-info">
           <section class="product-description">
-            <h1>
+            <h1 class="product-description__title">
               Shift the overall look and feel by adding these wonderful touches
               to furniture in your home
             </h1>
-            <p>
+            <p class="product-description__paragraph">
               Ever been in a room and felt like something was missing? Perhaps
               it felt slightly bare and uninviting. I’ve got some simple tips to
               help you make any room feel complete.
             </p>
           </section>
-          <section id="user-info">
+          <section class="user-info">
             <img
-              class="user-image"
+              class="user-info__image"
               src="./images/avatar-michelle.jpg"
               alt="user avatar"
             />
-            <div class="user-details">
-              <p>Michelle Appleton</p>
-              <p class="date">28 Jun 2020</p>
+            <div class="user-info__details">
+              <p class="user-info__name">Michelle Appleton</p>
+              <p class="user-info__date">28 Jun 2020</p>
             </div>
-            <button id="share-btn" class="button" aria-label="Share">
-              <img src="./images/icon-share.svg" alt="Share" />
+            <button class="button button--light" aria-label="Share">
+              <img
+                class="button__icon"
+                src="./images/icon-share.svg"
+                alt="Share"
+              />
             </button>
           </section>
         </div>
-        <section id="share-details" class="hidden">
-          <p>Share</p>
-          <div class="icons-container">
-            <div class="icon-container">
-              <img src="./images/icon-facebook.svg" alt="Facebook icon" />
+        <section class="share-details share-details--hidden">
+          <p class="share-details__text">Share</p>
+          <div class="share-details__icons-container">
+            <div class="share-details__icon-container">
+              <img
+                class="share-details__icon"
+                src="./images/icon-facebook.svg"
+                alt="Facebook icon"
+              />
             </div>
-            <div class="icon-container">
-              <img src="./images/icon-twitter.svg" alt="Twitter icon" />
+            <div class="share-details__icon-container">
+              <img
+                class="share-details__icon"
+                src="./images/icon-twitter.svg"
+                alt="Twitter icon"
+              />
             </div>
-            <div class="icon-container">
-              <img src="./images/icon-pinterest.svg" alt="Pinterest icon" />
+            <div class="share-details__icon-container">
+              <img
+                class="share-details__icon"
+                src="./images/icon-pinterest.svg"
+                alt="Pinterest icon"
+              />
             </div>
           </div>
-          <button id="share-btn-2" class="button" aria-label="Share">
-            <img src="./images/icon-share.svg" alt="Share" />
+          <button class="button button--dark" aria-label="Share">
+            <img
+              class="button__icon"
+              src="./images/icon-share.svg"
+              alt="Share"
+            />
           </button>
-          <div class="arrow"></div>
+          <div class="share-details__arrow"></div>
         </section>
       </article>
     </main>
-
-    <footer class="attribution">
+    <footer class="footer">
       Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+      <a
+        class="footer__link"
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
         >Frontend Mentor</a
       >. Coded by
-      <a href="https://www.linkedin.com/in/martinianol/" target="_blank">Mars</a
+      <a
+        class="footer__link"
+        href="https://www.linkedin.com/in/martinianol/"
+        target="_blank"
+        >Mars</a
       >.
     </footer>
   </body>
