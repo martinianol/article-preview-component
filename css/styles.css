@@ -98,33 +98,35 @@ article .image-container img {
   color: #6e8098;
 }
 
-#user-info {
+.user-info {
   display: flex;
   align-items: center;
   gap: 16px;
   margin-top: 48px;
 }
-#user-info.hidden {
+.user-info.hidden {
   display: none;
 }
 @media (min-width: 31rem) {
-  #user-info {
+  .user-info {
     margin-top: 24px;
     padding-right: 5px;
   }
 }
-#user-info .user-image {
+.user-info__image {
   width: 40px;
   height: 40px;
   border-radius: 50%;
 }
-#user-info .user-details {
+.user-info__details {
   display: flex;
   flex-direction: column;
+}
+.user-info__name {
   font: 700 0.8125rem/140% "Manrope", sans-serif;
   letter-spacing: 0.00975rem;
 }
-#user-info .user-details .date {
+.user-info__date {
   color: #9daec2;
   font-weight: 400;
 }
@@ -141,39 +143,34 @@ article .image-container img {
   border-radius: 50%;
   transition: background 0.3s ease;
 }
-.button img {
+.button__icon {
   width: 15px;
   height: 13px;
   transition: filter 0.3s ease;
 }
-
-#share-btn {
+.button--light {
   background-color: #ecf2f8;
 }
-#share-btn img {
-  filter: invert(0);
-}
-#share-btn:hover, #share-btn.active {
+.button--light:hover, .button--light.active {
   background-color: #6e8098;
 }
-#share-btn:hover img, #share-btn.active img {
+.button--light:hover .button__icon, .button--light.active .button__icon {
   filter: brightness(0) invert(1);
 }
-
-#share-btn-2 {
+.button--dark {
   background-color: #6e8098;
 }
-#share-btn-2 img {
+.button--dark .button__icon {
   filter: brightness(0) invert(1);
 }
-#share-btn-2:hover {
+.button--dark:hover {
   background-color: #ecf2f8;
 }
-#share-btn-2:hover img {
+.button--dark:hover .button__icon {
   filter: invert(0);
 }
 
-#share-details {
+.share-details {
   position: relative;
   display: flex;
   align-items: center;
@@ -183,35 +180,35 @@ article .image-container img {
   padding: 22px 30px;
 }
 @media (min-width: 31rem) {
-  #share-details {
+  .share-details {
     border-radius: 10px;
     padding: 18px 38px;
     margin-top: 0px;
   }
-  #share-details button {
+  .share-details button {
     display: none;
   }
 }
-#share-details.hidden {
+.share-details--hidden {
   display: none;
 }
-#share-details p {
+.share-details__text {
   text-transform: uppercase;
   font: 400 13px/140% "Manrope", sans-serif;
   letter-spacing: 0.203125rem;
   color: #9daec2;
 }
-#share-details .icons-container {
+.share-details .icons-container {
   display: flex;
   gap: 16px;
   align-items: center;
   height: 20px;
   line-height: 0;
 }
-#share-details .icons-container img {
+.share-details .icons-container img {
   width: 20px;
 }
-#share-details .arrow {
+.share-details__arrow {
   position: absolute;
   bottom: -12px;
   left: 50%;

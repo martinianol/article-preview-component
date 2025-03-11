@@ -1,8 +1,8 @@
-const shareBtns = document.querySelectorAll("button");
-const shareBtn = document.getElementById("share-btn");
-const shareBtn2 = document.getElementById("share-btn-2");
-const shareDetails = document.getElementById("share-details");
-const userInfo = document.getElementById("user-info");
+const shareBtns = document.querySelectorAll(".button");
+const shareBtn = shareBtns[0];
+const shareBtn2 =shareBtns[1]
+const shareDetails = document.querySelector(".share-details--hidden");
+const userInfo = document.querySelector(".user-info");
 const arrowTooltip = document.getElementsByClassName("arrow")[0];
 
 const positionTooltip = () => {
@@ -30,7 +30,7 @@ shareBtns.forEach((button) => {
 
     // Toggle user-info visibility only in mobile view
     if (window.innerWidth < 500) {
-      userInfo.classList.toggle("hidden", !isHidden);
+      userInfo.classList.toggle("user-info--hidden", !isHidden);
     }
 
     button.classList.toggle("active", !isHidden);

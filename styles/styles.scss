@@ -129,7 +129,7 @@ article {
   }
 }
 
-#user-info {
+.user-info {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -144,22 +144,24 @@ article {
     padding-right: 5px;
   }
 
-  .user-image {
+  &__image {
     width: 40px;
     height: 40px;
     border-radius: 50%;
   }
 
-  .user-details {
+  &__details {
     display: flex;
     flex-direction: column;
+  }
 
+  &__name {
     @include text-preset-2-bold;
+  }
 
-    .date {
-      color: $grey-400;
-      font-weight: 400;
-    }
+  &__date {
+    color: $grey-400;
+    font-weight: 400;
   }
 }
 
@@ -175,44 +177,40 @@ article {
   border-radius: 50%;
   transition: background 0.3s ease;
 
-  img {
+  &__icon {
     width: 15px;
     height: 13px;
     transition: filter 0.3s ease;
   }
-}
 
-#share-btn {
-  background-color: $grey-200;
-  img {
-    filter: invert(0);
+  &--light {
+    background-color: $grey-200;
+
+    &:hover,
+    &.active {
+      background-color: $grey-500;
+      .button__icon {
+        filter: brightness(0) invert(1);
+      }
+    }
   }
 
-  &:hover,
-  &.active {
+  &--dark {
     background-color: $grey-500;
-    img {
+    .button__icon {
       filter: brightness(0) invert(1);
     }
-  }
-}
 
-#share-btn-2 {
-  background-color: $grey-500;
-
-  img {
-    filter: brightness(0) invert(1);
-  }
-
-  &:hover {
-    background-color: $grey-200;
-    img {
-      filter: invert(0);
+    &:hover {
+      background-color: $grey-200;
+      .button__icon {
+        filter: invert(0);
+      }
     }
   }
 }
 
-#share-details {
+.share-details {
   position: relative;
   display: flex;
   align-items: center;
@@ -231,11 +229,11 @@ article {
     }
   }
 
-  &.hidden {
+  &--hidden {
     display: none;
   }
 
-  p {
+  &__text {
     text-transform: uppercase;
     @include text-preset-3;
     color: $grey-400;
@@ -253,7 +251,7 @@ article {
     }
   }
 
-  .arrow {
+  &__arrow {
     position: absolute;
     bottom: -12px; // Positions the arrow 12px below share-details
     left: 50%;
