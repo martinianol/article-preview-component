@@ -1,12 +1,4 @@
-// Color definition
-$white: #fff;
-$grey-900: #48556a;
-$grey-500: #6e8098;
-$grey-400: #9daec2;
-$grey-200: #ecf2f8;
-
-//Typography
-$font-primary: "Manrope", sans-serif;
+@use "variables" as *;
 
 // Define text preset using a mixin
 @mixin text-preset-1 {
@@ -28,9 +20,6 @@ $font-primary: "Manrope", sans-serif;
   font: 400 13px / 140% $font-primary;
   letter-spacing: 0.203125rem;
 }
-
-$break-point-1: 31rem;
-$break-point-2: 50rem;
 
 * {
   margin: 0;
@@ -156,8 +145,8 @@ footer {
   }
 
   &__date {
+    @include text-preset-2-medium();
     color: $grey-400;
-    font-weight: 400;
   }
 }
 
