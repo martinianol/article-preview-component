@@ -59,7 +59,7 @@ footer {
   padding: 20px;
 }
 
-article {
+.card {
   display: flex;
   flex-direction: column;
   background-color: $white;
@@ -75,7 +75,7 @@ article {
     max-width: 730px;
   }
 
-  .image-container {
+  &__image-container {
     max-height: 200px;
     overflow: hidden; // Ensures anything outside the container is hidden
 
@@ -84,7 +84,7 @@ article {
       flex: 0 0 37.5%;
     }
 
-    img {
+    &__image {
       width: 100%;
       height: 100%;
       object-fit: cover; // Ensures the image fills the container without distortion
@@ -111,21 +111,21 @@ article {
   @media (min-width: $break-point-2) {
     padding: 30px 40px;
   }
+}
 
-  .product-description {
-    display: flex;
-    flex-direction: column;
-    gap: 24px;
+.product-description {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 
-    h1 {
-      @include text-preset-1;
-      color: $grey-900;
-    }
+  &__title {
+    @include text-preset-1;
+    color: $grey-900;
+  }
 
-    p {
-      @include text-preset-2-medium;
-      color: $grey-500;
-    }
+  &__paragraph {
+    @include text-preset-2-medium;
+    color: $grey-500;
   }
 }
 
@@ -134,10 +134,6 @@ article {
   align-items: center;
   gap: 16px;
   margin-top: 48px;
-
-  &.hidden {
-    display: none;
-  }
 
   @media (min-width: $break-point-1) {
     margin-top: 24px;
@@ -165,6 +161,10 @@ article {
   }
 }
 
+.user-info--hidden {
+  display: none;
+}
+
 .button {
   margin-left: auto;
   border: none;
@@ -189,23 +189,28 @@ article {
     &:hover,
     &.active {
       background-color: $grey-500;
-      .button__icon {
-        filter: brightness(0) invert(1);
-      }
+    }
+  }
+
+  &--light .button__icon {
+    &:hover,
+    &.active {
+      filter: brightness(0) invert(1);
     }
   }
 
   &--dark {
     background-color: $grey-500;
-    .button__icon {
-      filter: brightness(0) invert(1);
-    }
 
     &:hover {
       background-color: $grey-200;
-      .button__icon {
-        filter: invert(0);
-      }
+    }
+  }
+
+  &--dark .button__icon {
+    filter: brightness(0) invert(1);
+    &:hover {
+      filter: invert(0);
     }
   }
 }
@@ -239,18 +244,6 @@ article {
     color: $grey-400;
   }
 
-  .icons-container {
-    display: flex;
-    gap: 16px;
-    align-items: center;
-    height: 20px;
-    line-height: 0;
-
-    img {
-      width: 20px;
-    }
-  }
-
   &__arrow {
     position: absolute;
     bottom: -12px; // Positions the arrow 12px below share-details
@@ -261,5 +254,19 @@ article {
     border-left: 12px solid transparent;
     border-right: 12px solid transparent;
     border-top: 12px solid $grey-900; // Matches the background color of share-details
+  }
+
+  &__icons-container {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    height: 20px;
+    line-height: 0;
+  }
+}
+
+.icon-container {
+  &__image {
+    width: 20px;
   }
 }
