@@ -21,8 +21,13 @@ main {
   align-items: center;
 }
 
-footer {
+.footer {
+  font-size: 0.625rem;
+  text-align: center;
   padding: 20px;
+}
+.footer__link {
+  color: hsl(228, 45%, 44%);
 }
 
 .card {
@@ -94,8 +99,11 @@ footer {
   color: #48556a;
 }
 .product-description__paragraph {
-  font: 400 13px/140% "Manrope", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 140%;
+  font-family: "Manrope", sans-serif;
   letter-spacing: 0.00975rem;
+  font-weight: 400;
   color: #6e8098;
 }
 
@@ -121,12 +129,18 @@ footer {
   flex-direction: column;
 }
 .user-info__name {
-  font: 700 0.8125rem/140% "Manrope", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 140%;
+  font-family: "Manrope", sans-serif;
   letter-spacing: 0.00975rem;
+  font-weight: 700;
 }
 .user-info__date {
-  font: 400 13px/140% "Manrope", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 140%;
+  font-family: "Manrope", sans-serif;
   letter-spacing: 0.00975rem;
+  font-weight: 400;
   color: #9daec2;
 }
 
@@ -197,7 +211,11 @@ footer {
 }
 .share-details__text {
   text-transform: uppercase;
-  font: 400 13px/140% "Manrope", sans-serif;
+  font-size: 0.8125rem;
+  line-height: 140%;
+  font-family: "Manrope", sans-serif;
+  letter-spacing: 0.00975rem;
+  font-weight: 400;
   letter-spacing: 0.203125rem;
   color: #9daec2;
 }

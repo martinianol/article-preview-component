@@ -5,17 +5,24 @@
   letter-spacing: 0.031rem;
 }
 
-@mixin text-preset-2-bold {
-  font: 700 0.8125rem / 140% $font-primary;
+@mixin text-preset-2 {
+  font-size: 0.8125rem;
+  line-height: 140%;
+  font-family: $font-primary;
   letter-spacing: 0.00975rem;
+}
+
+@mixin text-preset-2-bold {
+  @include text-preset-2;
+  font-weight: 700;
 }
 
 @mixin text-preset-2-medium {
-  font: 400 13px / 140% $font-primary;
-  letter-spacing: 0.00975rem;
+  @include text-preset-2;
+  font-weight: 400;
 }
 
 @mixin text-preset-3 {
-  font: 400 13px / 140% $font-primary;
+  @include text-preset-2-medium;
   letter-spacing: 0.203125rem;
 }
